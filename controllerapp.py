@@ -88,7 +88,7 @@ class OFP_message:
     match: ofp_match#ofp_match
     instructions: ofp_instructions #ofp_instruction_header
 
-def writeTunnelRules(p4info_helper, sw, dst_eth_addr, dst_ip_addr, port, table):
+def writeTableRules(p4info_helper, sw, dst_eth_addr, dst_ip_addr, port, table):
     """
 
     :param p4info_helper: obiekt P4Info helper
@@ -221,7 +221,7 @@ def main(p4info_file_path, bmv2_file_path):
 
 
 
-    if( Message.instructions.actions[2] == 3):    #przetlumacznie numeru portu wyjsciowego na docelowy adres MAC
+    if( Message.match.oxm_fields[2] == "10.0.3.3"):    #przetlumacznie docelowego adresu IP na na docelowy adres MAC
         mac_addr = "08:00:00:00:03:33"
 
     else: print("nie 3")
@@ -244,7 +244,7 @@ def main(p4info_file_path, bmv2_file_path):
         print(mac_addr," ",Message.match.oxm_fields[2]," ",Message.instructions.actions[2]," ",table)
 
         #wpisanie zdefiniwanej zasady do tabeli
-        writeTunnelRules(p4info_helper, sw=s1, dst_eth_addr=mac_addr, dst_ip_addr = Message.match.oxm_fields[2], port = port, table = table)
+        writeTableRules(p4info_helper, sw=s1, dst_eth_addr=mac_addr, dst_ip_addr = Message.match.oxm_fields[2], port = port, table = table)
 
 
         # odczytanie wartosci obecnych w tabeli
