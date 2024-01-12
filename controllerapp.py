@@ -248,7 +248,7 @@ def main(p4info_file_path, bmv2_file_path):
 
 
         # odczytanie wartosci obecnych w tabeli
-        readTableRules(p4info_helper, s1)
+        #readTableRules(p4info_helper, s1)
 
 
 
