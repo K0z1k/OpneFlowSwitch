@@ -244,7 +244,7 @@ def main(p4info_file_path, bmv2_file_path):
         print(mac_addr," ",Message.match.oxm_fields[2]," ",Message.instructions.actions[2]," ",table)
 
         #wpisanie zdefiniwanej zasady do tabeli
-        writeTableRules(p4info_helper, sw=s1, dst_eth_addr=mac_addr, dst_ip_addr = Message.match.oxm_fields[2], port = Message.instructions.action[2], table = table)
+        writeTableRules(p4info_helper, sw=s1, dst_eth_addr=mac_addr, dst_ip_addr = Message.match.oxm_fields[2], port = Message.instructions.actions[2], table = table)
 
 
         # odczytanie wartosci obecnych w tabeli
