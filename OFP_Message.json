@@ -50,6 +50,6 @@
       "out_group": 4294967295,
       "out_port": 4294967295,
       "priority": 0,
-      "table_id": 1
+      "table_id": 0
    }
 }
