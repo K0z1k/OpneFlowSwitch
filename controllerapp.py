@@ -213,8 +213,8 @@ def main(p4info_file_path, bmv2_file_path):
     port = 0
 
 
-    if(Message.table_id == 0):                  #przetlumaczenie id z wiadomosci OFP na nazwe tabeli w P4
-        table = "MyIngress.ipv4_lpm"
+    #if(Message.table_id == 0):                  #przetlumaczenie id z wiadomosci OFP na nazwe tabeli w P4
+    table = "MyIngress.ipv4_lpm"
 
     else: print("nie ta tabela")
 
